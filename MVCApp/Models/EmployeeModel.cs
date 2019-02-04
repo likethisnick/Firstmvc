@@ -30,10 +30,12 @@ namespace MVCApp.Models
 		public string ConfirmEmail { get; set; }
 
 		[Display(Name = "Password")]
+		[Required(ErrorMessage = "You must enter a password")]
 		[DataType(DataType.Password)]
 		[StringLength(100, MinimumLength = 8, ErrorMessage = "You must enter password longer then 8 symbols")]
 		public string Password { get; set; }
 
+		[Display(Name = "Confirm Password")]
 		[DataType(DataType.Password)]
 		[Compare("Password", ErrorMessage = "The passwords don't match")]
 		public string ConfirmPassword { get; set; }
